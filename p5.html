@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dev Padaliya - Portfolio</title>
+
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #ffffff;
+        color: #333333;
+    }
+
+    /* Header */
+    header {
+        background-color: #ffffff;
+        color: #4527A0;
+        text-align: center;
+        padding: 30px;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    header h1 {
+        font-size: 35px;
+        color: #4527A0;
+    }
+
+    header p {
+        margin-top: 10px;
+        font-size: 18px;
+        color: #673AB7;
+    }
+
+    /* Profile */
+    .profile {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background-color: #ffffff;
+        color: #673AB7;
+        text-align: center;
+        line-height: 120px;
+        margin: 0 auto 15px;
+        font-size: 35px;
+        font-weight: bold;
+        border: 4px solid #673AB7;
+    }
+
+    /* Navigation */
+    nav {
+        background-color: #673AB7;
+        text-align: center;
+        padding: 15px;
+    }
+
+    nav a {
+        color: #ffffff;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        color: #d1c4e9;
+    }
+
+    /* Main Container */
+    .container {
+        width: 85%;
+        margin: 25px auto;
+    }
+
+    /* Sections */
+    section {
+        background-color: #ffffff;
+        padding: 25px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        border: 1px solid #e0e0e0;
+    }
+
+    section h2 {
+        color: #673AB7;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #673AB7;
+        padding-bottom: 5px;
+    }
+
+    /* About */
+    .about {
+        text-align: center;
+    }
+
+    /* Skills */
+    .skills {
+        text-align: center;
+    }
+
+    .skill {
+        background-color: #f3e5f5;
+        color: #512DA8;
+        padding: 10px 20px;
+        margin: 5px;
+        border-radius: 5px;
+        font-weight: bold;
+        border: 1px solid #d1c4e9;
+    }
+
+    /* Education */
+    .education {
+        border-bottom: 1px solid #eee;
+        padding: 12px 0;
+        margin-bottom: 5px;
+    }
+
+    .education strong {
+        margin-right: 30px;
+    }
+
+    /* Projects */
+    .projects {
+        text-align: center;
+    }
+
+    .project {
+        background-color: #f3e5f5;
+        padding: 20px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        border: 1px solid #d1c4e9;
+    }
+
+    .project h3 {
+        color: #512DA8;
+        margin-bottom: 10px;
+    }
+
+    /* Contact */
+    .contact p {
+        margin: 8px 0;
+    }
+
+    /* Footer */
+    footer {
+        background-color: #673AB7;
+        color: #ffffff;
+        text-align: center;
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+
+        header h1 {
+            font-size: 28px;
+        }
+
+        nav a {
+            margin: 5px;
+        }
+
+        .container {
+            width: 95%;
+        }
+
+        .education strong {
+            margin-right: 10px;
+        }
+
+        .skills {
+            text-align: center;
+        }
+
+        .project {
+            margin-bottom: 15px;
+        }
+
+    }
+
+</style>
+
+</head>
+
+<body>
+
+<!-- Header -->
+<header>
+
+    <div class="profile">
+        DP
+    </div>
+
+    <h1>Dev Padaliya</h1>
+
+    <p>
+        CSE Student, Web Developer
+    </p>
+
+</header>
+
+
+<!-- Navigation -->
+<nav>
+
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+
+</nav>
+
+
+<!-- Main Content -->
+<div class="container">
+
+
+    <!-- About -->
+    <section id="about" class="about">
+
+        <h2>About Me</h2>
+
+        <p>
+            I am a B.Tech Computer Engineering student at Marwadi University
+            with a strong interest in web development, Java, databases, and
+            software development. I enjoy learning new technologies, solving
+            programming problems, and building simple, practical, and
+            user-friendly applications. I am continuously improving my
+            technical and problem-solving skills while working on academic
+            and personal projects.
+        </p>
+
+    </section>
+
+
+    <!-- Education -->
+    <section id="education">
+
+        <h2>Education</h2>
+
+        <div class="education">
+
+            <strong>Diploma in Computer Engineering</strong>
+
+            <span>Darshan University</span>
+
+        </div>
+
+        <div class="education">
+
+            <strong>Higher Secondary Education</strong>
+
+            <span>Gujarat Board</span>
+
+        </div>
+
+    </section>
+
+
+    <!-- Skills -->
+    <section id="skills">
+
+        <h2>Skills</h2>
+
+        <div class="skills">
+
+            <span class="skill">HTML</span>
+
+            <span class="skill">CSS</span>
+
+            <span class="skill">Java</span>
+
+            <span class="skill">SQL</span>
+
+            <span class="skill">Flutter</span>
+
+            <span class="skill">C</span>
+
+        </div>
+
+    </section>
+
+
+    <!-- Projects -->
+    <section id="projects">
+
+        <h2>Projects</h2>
+
+        <div class="projects">
+
+            <div class="project">
+
+                <h3>Online Shoe Store</h3>
+
+                <p>
+                    A mobile application developed using Flutter
+                    for browsing and purchasing shoes online.
+                </p>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>Internship Finder</h3>
+
+                <p>
+                    A web-based system that helps students find
+                    and apply for internships.
+                </p>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>Airline Management System</h3>
+
+                <p>
+                    An airline reservation and ticket booking
+                    system developed using Java and Spring.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+
+        <h2>Contact Me</h2>
+
+        <p>
+            <strong>Name:</strong> Dev Padaliya
+        </p>
+
+        <p>
+            <strong>Email:</strong> dev@example.com
+        </p>
+
+        <p>
+            <strong>Phone:</strong> +91 98765 43210
+        </p>
+
+        <p>
+            <strong>Location:</strong> Gujarat, India
+        </p>
+
+    </section>
+
+
+</div>
+
+
+<!-- Footer -->
+<footer>
+
+    <p>
+        © 2026 Dev Padaliya
+    </p>
+
+</footer>
+
+</body>
+</html>

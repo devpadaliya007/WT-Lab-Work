@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 Equal Boxes in Colored Container</title>
+    <style>
+        body {
+            background-color: #f1f5f9;
+            color: #1e293b;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 25px;
+            color: #0f172a;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 500px;
+            background-color: #80a0cc;
+            border: 4px solid #1e293b;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+
+        .box {
+            flex: 1;
+            height: 280px;
+            margin: 15px;
+            border-radius: 12px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+            transition: transform 0.3s ease;
+        }
+
+        .box:hover {
+            transform: translateY(-8px);
+        }
+
+        .box-blue {
+            background-color: #38bdf8;
+            color: #0f172a;
+        }
+
+        .box-yellow {
+            background-color: #ded94c;
+            color: #0f172a;
+        }
+
+        .box-green {
+            background-color: #4ade80;
+            color: #0f172a;
+        }
+    </style>
+</head>
+
+<body style="background-color: #ee5d5d;">
+    <h1>3 Equal Boxes Inside Colored Flex Container</h1>
+
+    <div class="container">
+        <div class="box box-blue">Box 1</div>
+        <div class="box box-yellow">Box 2</div>
+        <div class="box box-green">Box 3</div>
+    </div>
+</body>
+
+</html>
