@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>GK Quiz</title>
+    <style>
+        body {
+            background: #e6e6fa;
+            text-align: center;
+            font-family: Arial;
+        }
+
+        .box {
+            background: white;
+            width: 350px;
+            margin: 50px auto;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        #options button {
+            display: block;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <h2>GK Quiz</h2>
+        <h3 id="question"></h3>
+        <div id="options"></div>
+        <p id="result"></p>
+        <button id="next" onclick="nextQuestion()" disabled>Next</button>
+    </div>
+
+    <script>
+        let questions = [
+            { q: "Capital of India?", o: ["Mumbai", "Delhi", "Chennai", "Pune"], a: 1 },
+            { q: "Largest planet?", o: ["Earth", "Mars", "Jupiter", "Venus"], a: 2 },
+            { q: "Days in a week?", o: ["5", "6", "7", "8"], a: 2 },
+            { q: "National animal of India?", o: ["Lion", "Tiger", "Elephant", "Deer"], a: 1 },
+            { q: "Fastest land animal?", o: ["Horse", "Lion", "Cheetah", "Tiger"], a: 2 }
+        ];
+
+        let i = 0, score = 0;
+
+        function showQuestion() {
+            document.getElementById("question").innerHTML =
+                (i + 1) + ". " + questions[i].q;
+
+            let html = "";
+            questions[i].o.forEach((op, n) => {
+                html += `<button onclick="checkAnswer(this,${n})">${op}</button>`;
+            });
+
+            document.getElementById("options").innerHTML = html;
+            document.getElementById("result").innerHTML = "";
+            document.getElementById("next").disabled = true;
+        }
+
+        function checkAnswer(btn, n) {
+            let correct = questions[i].a;
+            let buttons = document.querySelectorAll("#options button");
+
+            buttons.forEach(b => b.disabled = true);
+
+            buttons[correct].style.background = "lightgreen";
+
+            if (n == correct) {
+                score++;
+                document.getElementById("result").innerHTML = "Correct Answer!";
+            } else {
+                btn.style.background = "tomato";
+                document.getElementById("result").innerHTML =
+                    "Wrong Answer! Correct Answer: " + questions[i].o[correct];
+            }
+
+            document.getElementById("next").disabled = false;
+        }
+
+        function nextQuestion() {
+            i++;
+
+            if (i < questions.length) {
+                showQuestion();
+            } else {
+                document.querySelector(".box").innerHTML =
+                    "<h2>Quiz Completed!</h2>" +
+                    "<h3>Your Score: " + score + "/" + questions.length + "</h3>" +
+                    "<button onclick='location.reload()'>Restart Quiz</button>";
+            }
+        }
+
+        showQuestion();
+    </script>
+
+</body>
+
+</html>
