@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: system-ui, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #e0e7ff, #f3e8ff, #fce7f3);
+            color: #1f2937;
+            display: flex;
+            justify-content: center;
+            padding: 30px 15px;
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        .card {
+            background: #fff;
+            width: 100%;
+            max-width: 520px;
+            padding: 28px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(80, 50, 130, 0.12);
+        }
+
+        h2 {
+            margin: 0 0 20px;
+            font-size: 22px;
+            color: #5b21b6;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .field {
+            margin-bottom: 14px;
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 9px 11px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 14px;
+            background: #fafaff;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #7c3aed;
+            box-shadow: 0 0 0 2px #ede9fe;
+        }
+
+        .radios {
+            display: flex;
+            gap: 16px;
+            padding-top: 6px;
+            font-size: 14px;
+        }
+
+        .radios label {
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin: 0;
+        }
+
+        .radios input {
+            width: auto;
+            accent-color: #7c3aed;
+        }
+
+        .err {
+            color: #dc2626;
+            font-size: 12px;
+            margin-top: 3px;
+            display: block;
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        button {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            background: #7c3aed;
+            color: #fff;
+        }
+
+        .btn-submit:hover {
+            background: #5b21b6;
+        }
+
+        .btn-reset {
+            background: #ede9fe;
+            color: #5b21b6;
+        }
+
+        .btn-reset:hover {
+            background: #ddd6fe;
+        }
+
+        @media (max-width: 500px) {
+            .row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <h2>Student Registration</h2>
+
+        <form id="regForm" novalidate>
+            <div class="row">
+                <div class="field">
+                    <label>Enrollment Number *</label>
+                    <input type="text" id="enrollment" placeholder="e.g. EN202601">
+                    <span class="err" id="e_enrollment"></span>
+                </div>
+                <div class="field">
+                    <label>Full Name *</label>
+                    <input type="text" id="name" placeholder="Enter full name">
+                    <span class="err" id="e_name"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="field">
+                    <label>Email ID *</label>
+                    <input type="email" id="email" placeholder="name@example.com">
+                    <span class="err" id="e_email"></span>
+                </div>
+                <div class="field">
+                    <label>Phone Number *</label>
+                    <input type="tel" id="phone" maxlength="10" placeholder="10-digit number"
+                        oninput="this.value=this.value.replace(/\D/g,'')">
+                    <span class="err" id="e_phone"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="field">
+                    <label>Password *</label>
+                    <input type="password" id="password" placeholder="Min 8 chars">
+                    <span class="err" id="e_password"></span>
+                </div>
+                <div class="field">
+                    <label>Confirm Password *</label>
+                    <input type="password" id="confirm" placeholder="Re-enter password">
+                    <span class="err" id="e_confirm"></span>
+                </div>
+            </div>
+
+            <div class="field">
+                <label>Address *</label>
+                <textarea id="address" rows="2" placeholder="Complete address"></textarea>
+                <span class="err" id="e_address"></span>
+            </div>
+
+            <div class="row">
+                <div class="field">
+                    <label>Gender *</label>
+                    <div class="radios">
+                        <label><input type="radio" name="gender" value="Male"> Male</label>
+                        <label><input type="radio" name="gender" value="Female"> Female</label>
+                        <label><input type="radio" name="gender" value="Other"> Other</label>
+                    </div>
+                    <span class="err" id="e_gender"></span>
+                </div>
+                <div class="field">
+                    <label>Branch *</label>
+                    <select id="branch">
+                        <option value="">Select Branch</option>
+                        <option>Computer Engineering</option>
+                        <option>Information Technology</option>
+                        <option>Mechanical Engineering</option>
+                        <option>Civil Engineering</option>
+                        <option>Electrical Engineering</option>
+                    </select>
+                    <span class="err" id="e_branch"></span>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button type="submit" class="btn-submit">Register</button>
+                <button type="reset" class="btn-reset">Reset</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('regForm');
+        const $ = id => document.getElementById(id);
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            document.querySelectorAll('.err').forEach(el => el.textContent = '');
+            let ok = true;
+
+            const fail = (id, msg) => {
+                $('e_' + id).textContent = msg;
+                ok = false;
+            };
+
+            if (!/^[A-Za-z0-9-]{4,20}$/.test($('enrollment').value.trim()))
+                fail('enrollment', 'Enter 4-20 alphanumeric chars.');
+
+            if (!/^[A-Za-z ]{3,40}$/.test($('name').value.trim()))
+                fail('name', 'Enter a valid name (min 3 letters).');
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($('email').value.trim()))
+                fail('email', 'Enter a valid email.');
+
+            if (!/^[6-9]\d{9}$/.test($('phone').value.trim()))
+                fail('phone', 'Enter a valid 10-digit mobile number.');
+
+            if (!/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$!%*?&]).{8,}$/.test($('password').value))
+                fail('password', 'Need 8+ chars, upper, lower, number & symbol.');
+
+            if (!$('confirm').value || $('password').value !== $('confirm').value)
+                fail('confirm', 'Passwords do not match.');
+
+            if ($('address').value.trim().length < 10)
+                fail('address', 'Address must be at least 10 characters.');
+
+            if (!document.querySelector('input[name="gender"]:checked'))
+                fail('gender', 'Select a gender.');
+
+            if (!$('branch').value)
+                fail('branch', 'Select a branch.');
+
+            if (ok) {
+                alert('Registration Successful!');
+                form.reset();
+            }
+        });
+
+        form.addEventListener('reset', () =>
+            document.querySelectorAll('.err').forEach(el => el.textContent = '')
+        );
+    </script>
+
+</body>
+
+</html>

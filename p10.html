@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAMPUS Shoes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white text-gray-900">
+
+  <!-- Navbar -->
+  <header class="border-b">
+    <div class="mx-auto max-w-7xl flex justify-between items-center p-5">
+      <h1 class="text-2xl font-extrabold">CAMPUS</h1>
+      <nav class="hidden md:flex gap-8 text-sm">
+        <a href="#">Home</a>
+        <a href="#product">Shop</a>
+        <a href="#features">Features</a>
+        <a href="#reviews">Reviews</a>
+      </nav>
+      <div class="font-semibold">🛒 <span id="cart">0</span></div>
+    </div>
+  </header>
+
+  <!-- Product -->
+  <main id="product" class="max-w-7xl mx-auto px-5 py-12">
+    <p class="text-sm text-gray-500 mb-6">Home / Shoes / Campus</p>
+
+    <div class="grid gap-12 lg:grid-cols-2">
+
+      <!-- Image -->
+      <div class="rounded-2xl bg-gray-100 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=900"
+          class="w-full h-[450px] sm:h-[600px] object-contain" alt="Campus sneakers">
+      </div>
+
+      <!-- Details -->
+      <section>
+        <p class="text-sm font-semibold text-gray-500">CAMPUS COLLECTION</p>
+        <h2 class="text-4xl font-bold mt-3">Campus Running Shoes</h2>
+        <p class="text-gray-500 mt-3">Comfort. Style. Performance.</p>
+
+        <div class="flex items-center gap-3 mt-7">
+          <span class="text-3xl font-bold">₹1,499</span>
+          <del class="text-gray-400">₹2,499</del>
+          <span class="bg-black text-white text-xs p-2">40% OFF</span>
+        </div>
+
+        <hr class="my-7">
+
+        <p class="text-gray-600 leading-7">
+          Experience ultimate comfort with Campus shoes. Lightweight
+          design, cushioned sole and modern style make them perfect
+          for running, workouts and everyday use.
+        </p>
+
+        <!-- Color -->
+        <div class="mt-8">
+          <p class="font-semibold mb-3">Color: <span id="colorName">White</span></p>
+          <div class="flex gap-4">
+            <button onclick="color('White',this)"
+              class="swatch bg-white border-2 border-black w-9 h-9 rounded-full"></button>
+            <button onclick="color('Black',this)" class="swatch bg-black border w-9 h-9 rounded-full"></button>
+            <button onclick="color('Grey',this)" class="swatch bg-gray-400 border w-9 h-9 rounded-full"></button>
+            <button onclick="color('Blue',this)" class="swatch bg-blue-600 border w-9 h-9 rounded-full"></button>
+          </div>
+        </div>
+
+        <!-- Size -->
+        <div class="mt-8">
+          <p class="font-semibold mb-3">Shoe Size (UK)</p>
+          <div class="grid grid-cols-3 gap-3">
+            <button onclick="size(6,this)" class="size border p-3 rounded-lg">6</button>
+            <button onclick="size(7,this)" class="size border p-3 rounded-lg">7</button>
+            <button onclick="size(8,this)" class="size border-2 border-black p-3 rounded-lg">8</button>
+            <button onclick="size(9,this)" class="size border p-3 rounded-lg">9</button>
+            <button onclick="size(10,this)" class="size border p-3 rounded-lg">10</button>
+            <button onclick="size(11,this)" class="size border p-3 rounded-lg">11</button>
+          </div>
+        </div>
+
+        <!-- Quantity -->
+        <div class="mt-8 flex gap-3">
+          <div class="flex items-center border rounded-lg">
+            <button onclick="qty(-1)" class="px-4 text-xl">−</button>
+            <span id="quantity">1</span>
+            <button onclick="qty(1)" class="px-4 text-xl">+</button>
+          </div>
+
+          <button onclick="addCart()" class="flex-1 bg-black text-white rounded-lg font-semibold hover:bg-gray-800">
+            Add to Cart
+          </button>
+
+          <button onclick="wish()" id="wish" class="border rounded-lg px-4 text-2xl">♡</button>
+        </div>
+
+        <button onclick="buy()"
+          class="mt-3 w-full border-2 border-black p-4 rounded-lg font-semibold hover:bg-black hover:text-white">
+          Buy Now
+        </button>
+
+        <!-- Benefits -->
+        <div class="grid grid-cols-3 gap-3 border-y mt-8 py-6 text-center text-xs">
+          <div>🚚<p class="font-semibold mt-2">Free Shipping</p>
+          </div>
+          <div>✓<p class="font-semibold mt-2">Quality Product</p>
+          </div>
+          <div>↩<p class="font-semibold mt-2">Easy Returns</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Features -->
+  <section id="features" class="bg-gray-50 py-16 px-5">
+    <h2 class="text-3xl font-bold text-center">Why Choose Campus?</h2>
+    <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-6 mt-10">
+      <div class="bg-white rounded-xl p-8 shadow-sm">
+        <h3 class="font-bold text-lg">👟 Premium Material</h3>
+        <p class="text-gray-500 mt-3 text-sm">Comfortable and breathable material.</p>
+      </div>
+      <div class="bg-white rounded-xl p-8 shadow-sm">
+        <h3 class="font-bold text-lg">⚡ Lightweight</h3>
+        <p class="text-gray-500 mt-3 text-sm">Easy movement for everyday activities.</p>
+      </div>
+      <div class="bg-white rounded-xl p-8 shadow-sm">
+        <h3 class="font-bold text-lg">🛡️ Durable Sole</h3>
+        <p class="text-gray-500 mt-3 text-sm">Strong grip and long-lasting comfort.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="reviews" class="max-w-7xl mx-auto px-5 py-16">
+    <h2 class="text-3xl font-bold">Customer Reviews</h2>
+    <div class="grid md:grid-cols-3 gap-8 mt-8">
+      <div>
+        <p class="text-yellow-500">★★★★★</p>
+        <p class="mt-3">Very comfortable shoes for daily use.</p><b class="block mt-4">Rahul</b>
+      </div>
+      <div>
+        <p class="text-yellow-500">★★★★★</p>
+        <p class="mt-3">Amazing quality and stylish design.</p><b class="block mt-4">Amit</b>
+      </div>
+      <div>
+        <p class="text-yellow-500">★★★★★</p>
+        <p class="mt-3">Lightweight and perfect for walking.</p><b class="block mt-4">Karan</b>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-950 text-white p-10">
+    <div class="max-w-7xl mx-auto flex justify-between flex-wrap gap-5">
+      <div>
+        <h2 class="text-2xl font-bold">CAMPUS</h2>
+        <p class="text-gray-400 mt-2">Step into comfort.</p>
+      </div>
+      <p class="text-gray-400">Privacy | Terms | Support</p>
+    </div>
+    <p class="text-gray-500 text-sm mt-8 border-t border-gray-800 pt-5">
+      © 2026 CAMPUS Shoes. All rights reserved.
+    </p>
+  </footer>
+
+  <script>
+    let quantity = 1, cart = 0, selectedSize = 8, selectedColor = "White";
+
+    function qty(n) {
+      quantity = Math.max(1, quantity + n);
+      document.getElementById("quantity").innerText = quantity;
+    }
+
+    function color(c, btn) {
+      selectedColor = c;
+      document.getElementById("colorName").innerText = c;
+
+      document.querySelectorAll(".swatch").forEach(b =>
+        b.classList.remove("ring-2", "ring-offset-2", "ring-black")
+      );
+      btn.classList.add("ring-2", "ring-offset-2", "ring-black");
+    }
+
+    function size(s, btn) {
+      selectedSize = s;
+      document.querySelectorAll(".size").forEach(b => {
+        b.classList.remove("border-2", "border-black", "font-bold");
+      });
+      btn.classList.add("border-2", "border-black", "font-bold");
+    }
+
+    function addCart() {
+      cart += quantity;
+      document.getElementById("cart").innerText = cart;
+      alert(quantity + " pair(s) added to cart!");
+    }
+
+    function wish() {
+      let b = document.getElementById("wish");
+      b.innerText = b.innerText === "♡" ? "♥" : "♡";
+    }
+
+    function buy() {
+      alert("Order Summary\nCampus Shoes\nColor: " + selectedColor +
+        "\nSize: UK " + selectedSize +
+        "\nQuantity: " + quantity +
+        "\nTotal: ₹" + (1499 * quantity));
+    }
+  </script>
+
+</body>
+
+</html>

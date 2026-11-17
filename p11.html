@@ -1,0 +1,132 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Shoes</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+    <header class="bg-black text-white p-4">
+
+        <nav class="container mx-auto flex justify-between items-center">
+
+            <!-- Logo -->
+            <h1 class="text-2xl font-bold text-yellow-400">
+                CAMPUS
+            </h1>
+
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex gap-8 items-center">
+
+                <li>
+                    <a href="#" class="hover:text-yellow-400">Home</a>
+                </li>
+
+                <!-- Men Dropdown -->
+                <li class="relative group">
+                    <button class="hover:text-yellow-400">
+                        Men ▼
+                    </button>
+
+                    <ul class="absolute hidden group-hover:block bg-gray-800 w-40 rounded mt-2 z-50">
+                        <li><a href="#" class="block p-3 hover:bg-gray-700">Sports Shoes</a></li>
+                        <li><a href="#" class="block p-3 hover:bg-gray-700">Casual Shoes</a></li>
+                        <li><a href="#" class="block p-3 hover:bg-gray-700">Running Shoes</a></li>
+                        <li><a href="#" class="block p-3 hover:bg-gray-700">Sandals</a></li>
+                    </ul>
+                </li>
+
+                <!-- Women Dropdown -->
+                <li class="relative group">
+                    <button class="hover:text-yellow-400">
+                        Women ▼
+                    </button>
+
+                    <ul class="absolute hidden group-hover:block bg-gray-800 w-40 rounded mt-2 z-50">
+                        <li><a href="#" class="block p-3 hover:bg-gray-700">Sneakers</a></li>
+                        <li><a href="#" class="block p-3 hover:bg-gray-700">Sports Shoes</a></li>
+                        <li><a href="#" class="block p-3 hover:bg-gray-700">Casual Shoes</a></li>
+                        <li><a href="#" class="block p-3 hover:bg-gray-700">Sandals</a></li>
+                    </ul>
+                </li>
+
+                <!-- Kids Dropdown -->
+                <li class="relative group">
+                    <button class="hover:text-yellow-400">
+                        Kids ▼
+                    </button>
+
+                    <ul class="absolute hidden group-hover:block bg-gray-800 w-40 rounded mt-2 z-50">
+                        <li><a href="#" class="block p-3 hover:bg-gray-700">Boys Shoes</a></li>
+                        <li><a href="#" class="block p-3 hover:bg-gray-700">Girls Shoes</a></li>
+                        <li><a href="#" class="block p-3 hover:bg-gray-700">School Shoes</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#" class="hover:text-yellow-400">New Arrivals</a>
+                </li>
+
+                <li>
+                    <a href="#" class="hover:text-yellow-400">Offers</a>
+                </li>
+
+                <li>
+                    <a href="#" class="hover:text-yellow-400">Contact</a>
+                </li>
+
+            </ul>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-2xl" onclick="document.getElementById('menu').classList.toggle('hidden')">
+                ☰
+            </button>
+
+        </nav>
+
+        <!-- Mobile Navigation -->
+        <div id="menu" class="hidden md:hidden mt-4 space-y-3">
+
+            <a href="#" class="block">Home</a>
+
+            <details>
+                <summary class="cursor-pointer">Men</summary>
+                <a href="#" class="block p-2">Sports Shoes</a>
+                <a href="#" class="block p-2">Casual Shoes</a>
+                <a href="#" class="block p-2">Running Shoes</a>
+                <a href="#" class="block p-2">Sandals</a>
+            </details>
+
+            <details>
+                <summary class="cursor-pointer">Women</summary>
+                <a href="#" class="block p-2">Sneakers</a>
+                <a href="#" class="block p-2">Sports Shoes</a>
+                <a href="#" class="block p-2">Casual Shoes</a>
+                <a href="#" class="block p-2">Sandals</a>
+            </details>
+
+            <details>
+                <summary class="cursor-pointer">Kids</summary>
+                <a href="#" class="block p-2">Boys Shoes</a>
+                <a href="#" class="block p-2">Girls Shoes</a>
+                <a href="#" class="block p-2">School Shoes</a>
+            </details>
+
+            <a href="#" class="block">New Arrivals</a>
+            <a href="#" class="block">Offers</a>
+            <a href="#" class="block">Contact</a>
+
+        </div>
+
+    </header>
+
+</body>
+
+</html>
+```
